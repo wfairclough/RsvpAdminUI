@@ -20,7 +20,12 @@ class WebpackDevConfig extends WebpackBaseConfig {
       ],
       plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoErrorsPlugin(),
+        new webpack.ProvidePlugin({
+          jQuery: 'jquery',
+          $: 'jquery',
+          jquery: 'jquery'
+        })
       ]
     };
   }
